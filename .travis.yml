@@ -3,12 +3,13 @@ sudo: false
 dist: xenial
 env:
   global:
+  - GOPROXY="https://proxy.golang.org"
   - HUGO_BUILD_TAGS="extended"
 git:
   depth: false
 go:
-  - "1.11.7"
-  - "1.12.2"
+  - "1.11.10"
+  - "1.12.5"
   - tip
 os:
   - linux

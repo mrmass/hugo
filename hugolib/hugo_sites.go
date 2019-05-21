@@ -44,7 +44,7 @@ import (
 	"github.com/gohugoio/hugo/langs"
 	"github.com/gohugoio/hugo/lazy"
 
-	"github.com/gohugoio/hugo/i18n"
+	"github.com/gohugoio/hugo/langs/i18n"
 	"github.com/gohugoio/hugo/resources/page"
 	"github.com/gohugoio/hugo/tpl"
 	"github.com/gohugoio/hugo/tpl/tplimpl"
@@ -61,6 +61,9 @@ type HugoSites struct {
 
 	// If this is running in the dev server.
 	running bool
+
+	// Serializes rebuilds when server is running.
+	runningMu sync.Mutex
 
 	// Render output formats for all sites.
 	renderFormats output.Formats
